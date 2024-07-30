@@ -6,12 +6,13 @@ import taj from "../assets/image/taj.png"
 import fall from "../assets/image/fall.png"
 import church from "../assets/image/church.png"
 import Group from "../assets/image/Group.png"
-
+import Button from '@mui/material/Button';
 import { HiOutlineMail } from "react-icons/hi";
 import { TbPasswordFingerprint } from "react-icons/tb";
 import "./Login.css"
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { Link } from 'react-router-dom';
 const Login = () => {
   return (
     <div className="flex flex-wrap">
@@ -49,7 +50,7 @@ const Login = () => {
             <div className=' flex flex-col'>
                 
                 <div className='flex justify-inline m-2 '>
-                <span className='text-3xl mr-3 text-blue-500'><HiOutlineMail/></span>
+                <span className='text-4xl mt-3 mr-3 text-blue-500'><HiOutlineMail/></span>
                 <Box
       component="form"
       sx={{
@@ -60,20 +61,36 @@ const Login = () => {
     ><TextField
           required
           id="outlined-required"
-          label="Required"
-          defaultValue="Hello World"
+          label="UserName"
+          defaultValue="username"
         /></Box>
                 </div>  
                 <div className='flex justify-inline m-2 '>
-                <span className='text-3xl mr-3  text-blue-500'><TbPasswordFingerprint/></span>
-                <input className='rounded-xl  border border-neutral-600 bg-neutral-200' type='password' placeholder="Password"/>
+                <span className='text-4xl mt-3 mr-3  text-blue-500'><TbPasswordFingerprint/></span>
+                <Box
+      component="form"
+      sx={{
+        '& .MuiTextField-root': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    ><TextField
+    required
+          id="outlined-password-input"
+          label="Password"
+          type="password"
+          
+        /></Box>
                 </div>
-                <div className='flex justify-center mt-5'>
-                <button className='button w-40 mt-1 h-auto rounded-xl bg-blue-500 text-white font-bold text-3xl'  type='button'>
-                    Login
-                </button>
+                <div className='flex justify-center m-2'>
+                {/* <button className='button w-40 mt-1 h-auto rounded-xl bg-blue-500 text-white font-bold text-3xl'  type='button'>
+               
+                </button> */}
+                 <Button  variant="contained" size="large">
+          Login
+        </Button>
                 </div>
-                <p className='text-xs flex justify-center font-thin text-slate-400'>don't have an account?Register Now</p>
+                <Link to='/Register' className='text-xs flex justify-center font-thin text-slate-400 '>don't have an account?<span className='cursor-pointer hover:text-blue-600'>Register Now</span></Link>
                 
             </div>
             
