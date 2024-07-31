@@ -1,9 +1,13 @@
-.bg-text{
-position:absolute;
-top:50px;
-width:50%;
-margin:auto;
+.bg-text {
+  position: absolute;
+  top: 50px;
+  width: 50%;
+  margin: auto;
 }
-.bg-img{
-    position:relative;
+.bg-img {
+  position: relative;
+}
+
+.page-container {
+  width: 100vw;
 }
